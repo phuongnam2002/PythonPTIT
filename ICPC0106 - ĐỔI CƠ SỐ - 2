@@ -1,0 +1,20 @@
+t = int(input())
+for i in range(0,t):
+	b = int(input())
+	s = input()
+	s = int(s,2)
+	t = ""
+	ls="ABCDEF"
+	r = s
+	while r>0:
+		if b>10:
+			m = r%b
+			if m>=10:
+				t+=ls[m-10]
+			else:
+				t+=str(m)
+		else:
+			t+=str(r%b)
+		r=r//b
+	t = t[::-1]
+	print(t)
