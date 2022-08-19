@@ -1,0 +1,18 @@
+a = []
+n = int(input())
+b = [int(i) for i in input().split()]
+for i in range(0,len(b)):
+	x = b[i]
+	if i%2==0:
+		a.insert(0,b[i])
+	else:
+		a.append(b[i])
+	while len(a)>=2:
+		l = a[0]
+		r = a[-1]
+		if (l+r)%2==0:
+			a.pop(0)
+			a.pop(len(a)-1)
+		else:
+			break
+print(len(a))
