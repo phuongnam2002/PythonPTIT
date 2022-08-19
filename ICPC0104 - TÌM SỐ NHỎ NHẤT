@@ -1,0 +1,13 @@
+t = int(input())
+for i in range(0,t):
+	a = []
+	s = input()
+	t = ""
+	for j in s:
+		if j.isdigit():
+			t=t+j
+		elif len(t) != 0:
+			a.append(t)
+			t=""
+	a = [int(i) for i in a]
+	print(min(a))
