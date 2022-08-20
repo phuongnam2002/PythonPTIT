@@ -1,0 +1,21 @@
+c=[1]*1000005
+c[1]=c[0]=0
+for i in range(4,1000001,2):
+	c[i]=0
+c[2]=1
+for i in range(3,1000001,2):
+	if c[i]==1:
+		for j in range(i*i,1000001,i):
+			c[j]=0
+
+t = int(input())
+for k in range(0,t):
+	n = int(input())
+	dem = 0
+	for i in range(3,n,2):
+		if c[i]:
+			t=str(i)
+			t=t[::-1]
+			if int(t)<n and t > str(i) and c[int(t)]:
+				print(i,int(t),end=" ")
+	print()
