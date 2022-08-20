@@ -1,0 +1,15 @@
+t = int(input())
+for k in range(0,t):
+	p,q = [i for i in input().split()]
+	p,q = min(p,q),max(p,q)
+	s = input().strip()
+	if ' ' in s:
+		s,t = s.split()
+	else:
+		t=input()
+	s=s.replace(q,p)
+	t=t.replace(q,p)
+	print(int(s)+int(t),end=" ")
+	s=s.replace(p,q)
+	t=t.replace(p,q)
+	print(int(s)+int(t))
