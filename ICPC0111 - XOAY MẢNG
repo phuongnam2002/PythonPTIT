@@ -1,0 +1,9 @@
+t = int(input())
+for k in range(0,t):
+	n,d = [int(i) for i in input().split()]
+	a = input().split()
+	for i in range(d,n):
+		print(int(a[i]),end=" ")
+	for i in range(0,d):
+		print(int(a[i]),end=" ")
+	print()
