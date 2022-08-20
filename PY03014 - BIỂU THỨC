@@ -1,0 +1,19 @@
+m = int(input())
+for k in range(0,m):
+	s = input()
+	t=""
+	for i in s:
+		if i=='(' or i==')':
+			t+=i
+	d = []
+	dem=0
+	for i in t:
+		if i=='(':
+			dem+=1
+			print(dem,end=" ")
+			d.append(dem)
+		else:
+			print(d[-1],end=" ")
+			d.remove(d[-1])
+	print()
+
