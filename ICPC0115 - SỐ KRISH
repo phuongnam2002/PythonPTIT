@@ -1,0 +1,14 @@
+c=[1]*11
+for i in range(2,10):
+	c[i]=c[i-1]*i
+t = int(input())
+for k in range(0,t):
+	n = input()
+	s = 0
+	for i in n:
+		i=int(i)
+		s+=c[i]
+	if s==int(n):
+		print('Yes')
+	else:
+		print('No')
