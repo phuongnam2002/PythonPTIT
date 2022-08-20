@@ -1,0 +1,7 @@
+t = int(input())
+for k in range(0,t):
+	n = input()
+	if n[0]==n[-1]:
+		print('YES')
+	else:
+		print('NO')
