@@ -1,0 +1,9 @@
+t = int(input())
+for k in range(t):
+	a = list(map(int,input()))
+	s=a.count(4)
+	t=a.count(7)
+	if s+t==len(a):
+		print("YES")
+	else:
+		print("NO")
