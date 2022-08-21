@@ -1,0 +1,16 @@
+t = int(input())
+for k in range(t):
+	n=int(input())
+	s=0
+	dem=1
+	while True:
+		t = n//10
+		if(t==0):
+			break
+		if n%10+s>=5:
+			s=1
+		else:
+			s=0
+		n//=10
+		dem*=10
+	print((n+s)*dem)
