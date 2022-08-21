@@ -1,0 +1,9 @@
+t = 1
+for k in range(t):
+	a = list(map(int,input()))
+	s=a.count(4)
+	t=a.count(7)
+	if s+t==4 or s+t==7:
+		print("YES")
+	else:
+		print("NO")
