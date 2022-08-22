@@ -1,0 +1,15 @@
+import math as mt
+a = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53]
+t = int(input())
+for k in range(t):
+	n,m = [int(i) for i in input().split()]
+	x = mt.gcd(n,m)
+	s = 0
+	while x:
+		s+=x%10
+		x//=10
+	x=s
+	if x in a:
+		print('YES')
+	else:
+		print("NO")
