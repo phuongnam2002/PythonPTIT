@@ -1,0 +1,14 @@
+import math as mt
+t = int(input())
+for k in range(t):
+	n = int(input())
+	a = [int(i) for i in input().split()]
+	kt=0
+	for i in a:
+		if a.count(i)>(n//2):
+			print(i)
+			kt=1
+			break
+	if kt==0:
+		print("NO")
+
