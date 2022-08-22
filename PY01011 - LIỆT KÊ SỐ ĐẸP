@@ -1,0 +1,35 @@
+b = [2,4,6,8]
+c = [2,4,6,8]
+kt = 1
+while len(b)>0:
+	t = b[0]
+	b.remove(b[0])
+	c.append(t)
+	if len(str(t))==4:
+		continue
+	b.append(t*10)
+	b.append(t*10+2)
+	b.append(t*10+4)
+	b.append(t*10+6)
+	b.append(t*10+8)
+ans = []
+for i in c:
+	i = str(i)
+	i = i+i[::-1]
+	i=int(i)
+	ans.append(i)
+b = []
+for i in ans:
+	if b.count(i)==0:
+		b.append(i)
+b.sort()
+t = int(input())
+for k in range(t):
+	n = int(input())
+	i=0
+	while i<len(ans):
+		if b[i]>=n:
+			break
+		print(b[i],end=" ")
+		i+=1
+	print()
