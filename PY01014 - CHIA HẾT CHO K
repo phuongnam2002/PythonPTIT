@@ -1,0 +1,13 @@
+import math as mt
+t = 1
+for k in range(t):
+	a,k,n = [int(i) for i in input().split()]
+	b = k-(a%k)
+	dem = 0
+	while a+b<=n:
+		dem+=1
+		print(b,end=" ")
+		b+=k
+	if dem==0:
+		print(-1)
+
