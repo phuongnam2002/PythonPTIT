@@ -1,0 +1,8 @@
+import math as mt
+t = int(input())
+a = []
+for k in range(t):
+	c = input().split()
+	if a.count(c)==0:
+		a.append(c)
+print(len(a))
