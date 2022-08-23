@@ -1,0 +1,20 @@
+import math as mt
+def nt(n):
+	if n<2:
+		return 0
+	for i in range(2,int(mt.sqrt(n))+1):
+		if n%i==0:
+			return 0
+	return 1
+t = 1
+for k in range(t):
+	n,m = [int(i) for i in input().split()]
+	a = []
+	for i in range(n):
+		c = list(map(int,input().split()))
+		a.append(c)
+	for i in range(len(a)):
+		for j in a[i]:
+			print(nt(j),end=" ")
+		print()
+
