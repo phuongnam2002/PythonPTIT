@@ -1,0 +1,27 @@
+import math as mt
+while True:
+	n = int(input())
+	if n==0:
+		break
+	a = []
+	a.append(n)
+	while n>1:
+		if n==1:
+			break
+		if a.count(n)==0:
+				a.append(n)
+		while(n%2==0):
+			if a.count(n)==0:
+				a.append(n)
+			n//=2
+		if n==1:
+			break
+		if a.count(n)==0:
+				a.append(n)
+		n=n*3+1
+		if a.count(n)==0:
+				a.append(n)
+	if a.count(n)==0:
+				a.append(n)
+	print(len(a)) 
+
