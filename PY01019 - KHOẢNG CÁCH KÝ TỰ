@@ -1,0 +1,10 @@
+t = int(input())
+for k in range(t):
+	s = input()
+	d = s[::-1]
+	kt = 1
+	for i in range(1,len(s)):
+		e = ord(s[i])-ord(s[i-1])
+		f = ord(d[i])-ord(d[i-1])
+		kt&=(abs(e)==abs(f))
+	print("YES" if kt else "NO")
