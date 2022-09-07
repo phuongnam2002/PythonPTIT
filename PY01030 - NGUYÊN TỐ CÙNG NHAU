@@ -1,0 +1,14 @@
+import math
+t = 1
+for k in range(t):
+	n,k = map(int,input().split())
+	x = pow(10,k-1)
+	y = pow(10,k)
+	dem = 0
+	for i in range(x,y):
+		if(math.gcd(i,n)==1):
+			dem+=1
+			print(i,end=" ")
+		if(dem==10):
+			print()
+			dem=0
