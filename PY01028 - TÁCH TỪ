@@ -1,0 +1,6 @@
+import math
+t = 1
+for k in range(t):
+	s = input().split()
+	for i in s:
+		print(i)
