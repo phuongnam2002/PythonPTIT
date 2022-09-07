@@ -1,0 +1,12 @@
+P="ABCDEFGHIJKLMNOPQRSTUVWXYZ_."
+while True:
+	s = input()
+	if s[0]=='0':
+		break
+	k,s = s.split()
+	k = int(k)
+	s=s[::-1]
+	for i in s:
+		t = P.find(i)
+		print(P[(t+k)%28],end="")
+	print()
