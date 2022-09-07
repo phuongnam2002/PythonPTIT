@@ -1,0 +1,26 @@
+import math
+t = 1
+for k in range(t):
+	s = input()
+	d=[]
+	e=""
+	n=len(s)-1
+	dem=1
+	while n>=0:
+		if(dem==3):
+			e=s[n]+e
+			d.append(e)
+			dem=1
+			e=""
+		else:
+			e=s[n]+e
+			dem+=1
+		n-=1
+	if(e!=""):
+		d.append(e)
+	d.reverse()
+	for i in range(0,len(d)):
+		if i!=len(d)-1:
+			print(d[i]+',',end="")
+		else:
+			print(d[i],end="")
