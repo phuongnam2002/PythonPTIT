@@ -1,0 +1,12 @@
+import math
+t = int(input())
+for k in range(t):
+	n = list(map(int,input()))
+	s = set(n)
+	if len(s)!=2:
+		print("NO")
+	else:
+		kt = 1
+		for i in range(0,len(n)-2):
+			kt&=(n[i]==n[i+2])
+		print("YES" if kt else "NO") 
