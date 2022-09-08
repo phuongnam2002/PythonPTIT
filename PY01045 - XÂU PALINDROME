@@ -1,0 +1,4 @@
+import math
+t = 1
+for k in range(t):
+	print(len(input())-1)
