@@ -1,0 +1,17 @@
+import math
+t = int(input())
+for k in range(t):
+	n = input()
+	m = n[::-1]
+	n = int(n)
+	m = int(m)
+	dem = 0
+	while True:
+		if dem==1000:
+			break
+		if n%7==0:
+			break
+		n+=m
+		m=int(str(n)[::-1])
+		dem += 1 
+	print(n if n%7==0 else -1)
