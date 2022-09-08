@@ -1,0 +1,21 @@
+import math
+s = [0,2,4,6,8]
+
+def ktr(n):
+	if len(n) not in s:
+		return 0
+	m = n[::-1]
+	if m!=n:
+		return 0
+	for i in n:
+		if int(i) not in s:
+			return 0
+	return 1
+
+t = int(input())
+for k in range(t):
+	n = int(input())
+	for i in range(2,n,2):
+		if ktr(str(i)):
+			print(i,end=" ")
+	print()
