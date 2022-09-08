@@ -1,0 +1,9 @@
+import math
+s = ['0','1','2']
+t = int(input())
+for k in range(t):
+	n = input()
+	kt = 1
+	for i in n:
+		kt&=(i in s)
+	print("YES" if kt else "NO")
