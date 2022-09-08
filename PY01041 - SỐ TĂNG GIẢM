@@ -1,0 +1,21 @@
+import math
+t = int(input())
+for k in range(t):
+	n = list(map(int,input()))
+	if len(n)<=2:
+		print("NO")
+		continue
+	n.append(-1)
+	p = -1
+	for i in range(len(n)-1):
+		if n[i]>=n[i+1]:
+			p = i
+			break
+	if p==len(n)-2 or p==-1 or p==0:
+		print("NO")
+	else:
+		dem = len(n)-1-p-1
+		for i in range(p+1,len(n)-1):
+			if n[i]>=n[i+1]:
+				dem-=1
+		print("YES" if dem==0 else "NO")
