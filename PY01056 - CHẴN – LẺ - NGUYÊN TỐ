@@ -1,0 +1,21 @@
+import math as mt
+c = [0]*5005
+c[0] = c[1] = 1
+for i in range(4,5001,2):
+	c[i]=1
+for i in range(3,int(mt.sqrt(5000))+1):
+	if c[i]==0:
+		for j in range(i*i,5001,2*i):
+			c[j]=1
+for i in range(int(input())):
+	n=list(map(int,input()))
+	s = sum(n)
+	kt=1
+	kt&=(c[s]==0)
+	for i in range(len(n)):
+		if i%2==0:
+			kt&=(n[i]%2==0)
+		else:
+			kt&=(n[i]%2==1)
+	print("YES" if kt else "NO")
+
