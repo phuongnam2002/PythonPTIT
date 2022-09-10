@@ -1,0 +1,6 @@
+for i in range(int(input())):
+	n=list(map(int,input()))
+	if(sum(n)%3==0):
+		print("YES")
+	else:
+		print("NO")
