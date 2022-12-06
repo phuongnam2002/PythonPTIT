@@ -1,0 +1,21 @@
+import sys
+a = []
+
+def di(k):
+	l = 0
+	r = len(a)-1
+	while l<=r:
+		m = (l+r)//2
+		if k>= a[m]:
+			r = m-1
+		else:
+			l = m+1
+	a.insert(l,k)
+	return l
+
+n = int(sys.stdin.readline())
+b = list(map(int,sys.stdin.readline().split()))
+dem = 0
+for i in b:
+	dem += di(i)
+print(dem)
