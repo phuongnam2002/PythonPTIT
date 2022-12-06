@@ -1,0 +1,24 @@
+import sys
+import math as mt
+import array
+N,M = 1 + 2*10**6,2*10**6
+c = array.array('i', [0]*N)
+for i in range(2,int(mt.sqrt(M))+1):
+	if c[i]==0:
+		c[i] = i
+		for j in range(i,M//i+1):
+			c[i*j] = i
+del j
+del M
+for i in range(4,N):
+	c[i] += c[i//c[i]] if c[i] else i
+del N
+del i
+dem = 0
+n = int(sys.stdin.readline())
+while 1:
+    try:
+        x = int(sys.stdin.readline())
+        dem += c[x]
+    except: break
+print(dem)
