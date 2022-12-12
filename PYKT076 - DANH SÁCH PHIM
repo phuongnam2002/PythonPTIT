@@ -1,0 +1,56 @@
+import functools
+class film:
+	def __init__(self,ed,typ,day,ten,tap):
+		self.ed = ed
+		self.typ = typ
+		self.day = day
+		self.ten = ten
+		self.tap = tap
+	def inra(self):
+		return "P{:03d} {} {} {} {}".format(self.ed,self.typ,self.day,self.ten,self.tap)
+def ss(x,y):
+	if x[2]==y[2]:
+		if x[1]==y[1]:
+			if x[0]<y[0]:
+				return -1
+			elif x[0]>y[0]:
+				return 1
+			else:
+				return 0
+		elif x[1]<y[1]:
+			return -1
+		else:
+			return 1
+	elif x[2]<y[2]:
+		return -1
+	return 1
+def cmp(a,b):
+	x = [int(i) for i in a.day.split('/')]
+	y = [int(i) for i in b.day.split('/')]
+	if ss(x,y)==0:
+		if a.ten==b.ten:
+			if a.tap<b.tap:
+				return 1
+			return -1
+		elif a.ten<b.ten:
+			return -1
+		return 1
+	return ss(x,y)
+a = {}
+b = []
+n,m = [int(i) for i in input().split()]
+for i in range(n):
+	a[i+1] = input()
+ed = 1
+for i in range(m):
+	idd = int(input()[2:])
+	day = input()
+	ten = input()
+	tap = int(input())
+	b.append(film(ed,a[idd],day,ten,tap))
+	ed+=1
+b = sorted(b,key=functools.cmp_to_key(cmp))
+for i in b:
+	print(i.inra())
+
+
