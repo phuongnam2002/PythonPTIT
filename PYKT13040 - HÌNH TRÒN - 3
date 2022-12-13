@@ -1,0 +1,6 @@
+import math as mt 
+p = mt.pi
+n = float(input())
+d = 2*(mt.sqrt(2)+mt.sqrt(3)+1)
+n = mt.sqrt(2*n)
+print("{:.4f}".format(n/d))
