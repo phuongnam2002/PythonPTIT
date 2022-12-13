@@ -1,0 +1,56 @@
+import functools
+import bisect
+from math import ceil
+class sv:
+	def __init__(self,ed,ten,diem):
+		self.ed = ed
+		self.ten = ten
+		self.diem = diem
+		self.rank = 0
+	def inra(self):
+		return "SV{:02d} {} {:.2f} {}".format(self.ed,self.ten,self.diem,self.rank)
+def xuly(s):
+	s = s.strip().split()
+	ans=""
+	for i in range(len(s)):
+		s[i]=s[i].title()
+		ans+=s[i]
+		if i<len(s)-1:
+			ans+=" "
+	return ans
+def cmp(a,b):
+	if a.diem==b.diem:
+		if a.ed<b.ed:
+			return -1
+		return 1
+	elif a.diem>b.diem:
+		return -1
+	return 1
+n=int(input())
+b=[]
+c={}
+a=[]
+ed=1
+for _ in range(n):
+	s = xuly(input())
+	p1 = int(input())
+	p2 = int(input())
+	p3 = int(input())
+	p1 = (p1*3+p2*3+p3*2)/8
+	p1=ceil(p1*100)/100
+	b.append(sv(ed,s,p1))
+	a.append(p1)
+	ed+=1
+a=sorted(a)
+a=a[::-1]
+a.insert(0,-1)
+for i in a:
+	j=1
+	while j<len(a) and a[j]!=i:
+		j+=1
+	c[i]=j
+for i in range(n):
+	b[i].rank = c[b[i].diem]
+b=sorted(b,key=functools.cmp_to_key(cmp))
+for i in b:
+	print(i.inra())
